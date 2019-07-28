@@ -2,3 +2,6 @@ envi/
 emtennis/emtennis/__pycache__/
 emtennis/events/__pycache__
 emtennis/events/migrations/__pycache__/
+emtennis/events/tests/__pycache__/
+emtennis/accounts/__pycache__/
+emtennis/accounts/migrations/__pycache__/
