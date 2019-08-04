@@ -17,6 +17,9 @@
   <!-- Custom Css -->
   <link href="{% static 'events/css/style.css' %}" rel="stylesheet">
 
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'events/img/favicon.png' %}"/>
+
   <!-- Custom fonts for this template -->
   <link href="{% static 'events/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel='stylesheet' type='text/css'>
@@ -32,7 +35,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand" href="index.html"><img class= "logo-em-tennis" src="{% static 'events/img/logo.png' %}"> EM Tennis</a>
+      <a class="navbar-brand" href="{% url 'events:index' %}"><img class= "logo-em-tennis" src="{% static 'events/img/logo.png' %}"> EM Tennis</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars"></i>
@@ -53,17 +56,17 @@
           </li>
           {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" href="#">Mon compte</a>
+            <a class="nav-link" href="{% url 'accounts:myaccount' %}">Mon compte</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Log Out</a>
+            <a class="nav-link" href="{% url 'accounts:logout' %}">Se déconnecter</a>
           </li>
           {% else %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'accounts:signup' %}">Créer un compte</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Login</a>
+            <a class="nav-link" href="{% url 'accounts:login' %}">Se connecter</a>
           </li>
           {% endif %}
         </ul>

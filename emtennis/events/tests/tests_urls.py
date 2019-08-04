@@ -15,6 +15,6 @@ class HomePageTest(TestCase):
         """ Test  which control if the template used
         is the good one, and path correctly assigned"""
         client = Client()
-        response = client.get(reverse('index'))
+        response = client.get(reverse('events:index'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'events/index.html')

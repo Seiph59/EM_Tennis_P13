@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from accounts.forms import UserRegisterForm
 
 def create(request):
@@ -8,9 +9,13 @@ def create(request):
         form = UserRegisterForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('welcome:home')
+            return redirect('events:index')
     else:
         form = UserRegisterForm()
     return render(request, 'accounts/create_account.html', {'form': form})
 
+@login_required
+def account(request):
+    """ Method for my_account page"""
+    return render(request, 'accounts/my_account.html')
 

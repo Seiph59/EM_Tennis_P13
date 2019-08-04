@@ -126,3 +126,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_ROOT = '/image/emtennis/user_upload/'
+LOGOUT_REDIRECT_URL = 'events:index'
+LOGIN_REDIRECT_URL = 'events:index'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
