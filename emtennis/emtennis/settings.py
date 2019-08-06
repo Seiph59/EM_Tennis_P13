@@ -125,7 +125,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-MEDIA_ROOT = '/image/emtennis/user_upload/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 LOGOUT_REDIRECT_URL = 'events:index'
 LOGIN_REDIRECT_URL = 'events:index'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

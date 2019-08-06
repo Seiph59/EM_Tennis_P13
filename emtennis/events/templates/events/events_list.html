@@ -2,26 +2,23 @@
 
 {% block content %}
 {% load static %}
-  <!-- Page Header -->
-  <header class="masthead" style="background-image: url('{% static 'events/img/home-bg.jpg' %}')">
-    <div class="overlay"></div>
+
+  <header class="masthead custom" >
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="site-heading reduce-heading">
-            <h1>Event Matchmaking Tennis</h1>
-            <span class="subheading">Portail du TC Hénin-Beaumont</span>
+          <div class="site-heading heading-mini">
+            <h2> Tous les évènements à venir </h2>
           </div>
         </div>
       </div>
     </div>
   </header>
-
   <!-- Main Content -->
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        <p><h2>Prochain évènement:</h2></p>
+          {% for event in event_list %}
           <div class="row box margin-top30">
               <div class="col-md-8">
                   <div class="post-preview">
@@ -41,13 +38,5 @@
                   <img class='image-event'src="{{ event.image.url }}"/>
               </div>
             </div>
-
-        <!-- Pager -->
-        <div class="clearfix">
-          <a class="btn btn-primary float-right margin-top30" href="{% url 'events:events' %}">Tous les évènements &rarr;</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
+          {% endfor %}
 {% endblock %}
