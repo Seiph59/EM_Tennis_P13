@@ -24,6 +24,7 @@
     <form method="POST">
       {% csrf_token %}
           {{ form|crispy}}
+          {{ pform|crispy}}
       <button class="btn btn-outline-info" type="submit"> S'inscrire</button>
     </form>
   </div>
