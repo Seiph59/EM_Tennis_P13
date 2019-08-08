@@ -2,6 +2,7 @@
 
 {% block content %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 <!-- Page Header -->
 <header class="masthead custom">
@@ -30,6 +31,18 @@
                     <p class="post-subtitle">{{event.description}}</p>
                     <p> Prix adulte: {{ event.adult_price }} €</p>
                     <p> Prix enfant: {{ event.child_price }} €</p>
+                    {% if user.is_authenticated %}
+                    <form method="POST">
+                      {% csrf_token %}
+                          {{ registration_form|crispy}}
+                      <button class="btn btn-outline-info" type="submit"> S'inscrire</button>
+                    </form>
+                    {% else %}
+                    <div class="clearfix">
+                      Identifiez-vous ou créez un compte pour vous inscrire à cet évènement
+                      <a class="btn btn-primary float-right margin-top30" href="{% url 'accounts:login' %}">S'identifier &rarr;</a>
+                    </div>
+                    {% endif %}
               </div>
               <div class="col-md-4">
                 <a href="{{ event.image.url }}">
@@ -37,18 +50,6 @@
                 </a>
               </div>
             </div>
-            <hr>
-        <!-- Pager -->
-        {% if user.is_authenticated %}
-        <div class="clearfix">
-          <a class="btn btn-primary float-right margin-top30" href="#">S'inscrire &rarr;</a>
-        </div>
-        {% else %}
-        <div class="clearfix">
-            Identifiez-vous ou créez un compte pour vous inscrire à cet évènement
-            <a class="btn btn-primary float-right margin-top30" href="{% url 'accounts:login' %}">S'identifier &rarr;</a>
-        </div>
-        {% endif %}
       </div>
     </div>
   </div>

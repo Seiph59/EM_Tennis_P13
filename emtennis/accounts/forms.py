@@ -23,8 +23,8 @@ class UserRegisterForm(UserCreationForm):
 
 class ProfileForm(forms.ModelForm):
     """ Forms for the profile informations """
-    profile_image = forms.ImageField(required=False)
-    ranking = forms.CharField(required=False)
+    profile_image = forms.ImageField(required=False, label="Image de profil")
+    ranking = forms.CharField(required=False, label="Classement")
 
     class Meta:
         """ Define the order of fields """
