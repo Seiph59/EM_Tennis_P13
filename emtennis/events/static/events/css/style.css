@@ -7,6 +7,10 @@ body{
     text-align: center;
 }
 
+.justify {
+    text-align: justify
+}
+
 .heading-micro {
     padding: 30px !important;
 }
@@ -67,6 +71,11 @@ body{
     margin-top: 30px;
 }
 /* Style for Accounts app */
+.title {
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 22px;
+}
 
 
 /* Style for Index */

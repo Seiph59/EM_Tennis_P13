@@ -5,3 +5,4 @@ emtennis/events/migrations/__pycache__/
 emtennis/events/tests/__pycache__/
 emtennis/accounts/__pycache__/
 emtennis/accounts/migrations/__pycache__/
+emtennis/accounts/tests/__pycache__/

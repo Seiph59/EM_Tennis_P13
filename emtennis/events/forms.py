@@ -5,8 +5,8 @@ class RegistrationForm(forms.ModelForm):
     """ Forms for the registration informations
     added or modified by the user """
     registered = forms.BooleanField(label="Valider son inscription")
-    adult_number = forms.IntegerField(label="Nombre d'adulte(s)")
-    child_number = forms.IntegerField(label="Nombre d'enfant(s)")
+    adult_number = forms.IntegerField(min_value=0, label="Nombre d'adulte(s)")
+    child_number = forms.IntegerField(min_value=0, label="Nombre d'enfant(s)")
 
     class Meta:
         """Define the order of fields"""

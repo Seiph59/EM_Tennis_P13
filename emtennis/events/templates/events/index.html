@@ -25,6 +25,7 @@
           <div class="row box margin-top30">
               <div class="col-md-8">
                   <div class="post-preview">
+                    {% if event %}
                       <a href="{% url 'events:event_detail' event_id=event.pk %}">
                         <h2 class="post-title margin-top5">
                           {{ event.title}}
@@ -35,7 +36,8 @@
                       </a>
                       <p class="post-subtitle">Date de l'évènement :
                         {{ event.event_date}}</p>
-                    </div>
+                    {% endif %}
+                  </div>
               </div>
               <div class="col-md-4">
                   <img class='image-event'src="{{ event.image.url }}"/>

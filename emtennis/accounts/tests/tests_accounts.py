@@ -3,6 +3,7 @@ and data into the database """
 
 from django.test import TestCase, Client
 from django.contrib.auth.models import User
+from accounts.models import Profile
 
 
 class UserAccountTest(TestCase):
@@ -39,3 +40,21 @@ class UserAccountTest(TestCase):
                                    'password2': 'Openclassrooms'})
         account_count = User.objects.count()
         self.assertEqual(account_count, 1)
+
+    def test_account_created_by_client_is_linked_with_his_profile(self):
+        """ Check if create an account from Client is working """
+        basic_account_status = User.objects.count()
+        basic_profile_status = Profile.objects.count()
+        self.assertEqual(basic_account_status, 0)
+        self.assertEqual(basic_profile_status,0)
+        client = Client()
+        client.post('/register/', {'username': 'seiph2',
+                                    'first_name': 'Damien',
+                                    'last_name': 'Galasso',
+                                    'email': 'damien@seiph.com',
+                                    'password1': 'Openclassrooms',
+                                    'password2': 'Openclassrooms'})
+        account_count = User.objects.count()
+        profile_count = Profile.objects.count()
+        self.assertEqual(account_count, 1)
+        self.assertEqual(profile_count, 1)

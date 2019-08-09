@@ -23,5 +23,7 @@ def create(request):
 @login_required
 def account(request):
     """ Method for my_account page"""
-    return render(request, 'accounts/my_account.html')
+    user = request.user
+    registrations = user.profile.registration_set.all()
+    return render(request, 'accounts/my_account.html', {'registrations':registrations})
 
