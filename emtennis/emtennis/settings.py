@@ -19,13 +19,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '&si+vga*-0znp1&sr6f&fm%9!c!)8dnuwf=)h9rc10%6$d^%h&'
+if os.environ.get('ENV') == 'PRODUCTION':
+    DEBUG = False
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+    ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS')
+else:
+    SECRET_KEY = '&si+vga*-0znp1&sr6f&fm%9!c!)8dnuwf=)h9rc10%6$d^%h&'
+    DEBUG = True
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -76,16 +77,28 @@ WSGI_APPLICATION = 'emtennis.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'emTennis',
-        'USER': 'userP13',
-        'PASSWORD': 'P13user',
-        'HOST': 'localhost',
-        'PORT': '5432',
+if os.environ.get('ENV') == 'PRODUCTION':
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.environ.get('DB_NAME'),
+            'USER': os.environ.get('DB_USER'),
+            'PASSWORD': os.environ.get('DB_PWD'),
+            'HOST': 'localhost',
+            'PORT': '5432',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'emTennis',
+            'USER': 'userP13',
+            'PASSWORD': 'P13user',
+            'HOST': 'localhost',
+            'PORT': '5432',
+        }
+    }
 
 
 # Password validation
