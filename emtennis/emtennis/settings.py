@@ -143,3 +143,6 @@ MEDIA_URL = '/media/'
 LOGOUT_REDIRECT_URL = 'events:index'
 LOGIN_REDIRECT_URL = 'events:index'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+if os.environ.get('ENV') == 'PRODUCTION':
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
