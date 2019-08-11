@@ -29,8 +29,6 @@ else:
 
 ALLOWED_HOSTS = ['51.75.141.137', '127.0.0.1']
 
-
-
 # Application definition
 
 INSTALLED_APPS = [
