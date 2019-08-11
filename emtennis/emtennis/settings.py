@@ -22,10 +22,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if os.environ.get('ENV') == 'PRODUCTION':
     DEBUG = False
     SECRET_KEY = os.environ.get('SECRET_KEY')
-    ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS')
+
 else:
     SECRET_KEY = '&si+vga*-0znp1&sr6f&fm%9!c!)8dnuwf=)h9rc10%6$d^%h&'
     DEBUG = True
+
+    ALLOWED_HOSTS = ['127.0.0.1', '51.75.141.137']
 
 
 
