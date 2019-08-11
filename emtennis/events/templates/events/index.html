@@ -41,13 +41,12 @@
               <div class="col-md-4">
                   <img class='image-event'src="{{ event.image.url }}"/>
               </div>
-        {% endif %}
             </div>
-
         <!-- Pager -->
         <div class="clearfix">
           <a class="btn btn-primary float-right margin-top30" href="{% url 'events:events' %}">Tous les évènements &rarr;</a>
         </div>
+        {% endif %}
       </div>
     </div>
   </div>
