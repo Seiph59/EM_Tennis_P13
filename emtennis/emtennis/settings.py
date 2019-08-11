@@ -27,7 +27,7 @@ else:
     SECRET_KEY = '&si+vga*-0znp1&sr6f&fm%9!c!)8dnuwf=)h9rc10%6$d^%h&'
     DEBUG = True
 
-    ALLOWED_HOSTS = ['127.0.0.1', '51.75.141.137']
+    ALLOWED_HOSTS = ['51.75.141.137', '127.0.0.1']
 
 
 
