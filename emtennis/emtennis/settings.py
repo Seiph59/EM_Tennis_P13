@@ -35,12 +35,14 @@ INSTALLED_APPS = [
     'crispy_forms',
     'accounts.apps.AccountsConfig',
     'events.apps.EventsConfig',
+    'payment.apps.PaymentConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'paypal.standard.ipn',
 ]
 
 MIDDLEWARE = [
@@ -143,6 +145,10 @@ MEDIA_URL = '/media/'
 LOGOUT_REDIRECT_URL = 'events:index'
 LOGIN_REDIRECT_URL = 'events:index'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+PAYPAL_RECEIVER_EMAIL ='chimere_62@hotmail.fr'
+PAYPAL_TEST = True
+
 
 if os.environ.get('ENV') == 'PRODUCTION':
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

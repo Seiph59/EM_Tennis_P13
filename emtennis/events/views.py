@@ -27,8 +27,13 @@ def event_detail(request, event_id):
             registration = registration_form.save(commit=False)
             registration.profile = profile
             registration.event = event
+            adult_amount = registration.adult_number * event.adult_price
+            child_amount = registration.child_number * event.child_price
+            registration.amount = adult_amount + child_amount
+            order_id = '0' + str(event.id) + '0' + str(profile.id)
+            registration.order_id = order_id
             registration.save()
-            return redirect('events:index')
+            return redirect('payment:process_payment')
 
     else:
         registration_form = RegistrationForm()
