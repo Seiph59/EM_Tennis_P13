@@ -3,4 +3,7 @@ from django.apps import AppConfig
 
 class PaymentConfig(AppConfig):
     name = 'payment'
-    import payment.signals
+
+    def ready(self):
+        """import signal """
+        import payment.signals
