@@ -33,6 +33,7 @@ def event_detail(request, event_id):
             order_id = '0' + str(event.id) + '0' + str(profile.id)
             registration.order_id = order_id
             registration.save()
+            request.session['order_id'] = order_id
             return redirect('payment:process_payment')
 
     else:

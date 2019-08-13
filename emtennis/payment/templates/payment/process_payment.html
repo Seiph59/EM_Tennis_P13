@@ -3,6 +3,30 @@
 {% block content %}
 {% load static %}
 
-{{ form.render }}
+<header class="masthead" style="background-image: url('{% static 'events/img/home-bg.jpg' %}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading align-center center heading-mini">
+            <h2 class="center">Paiement via Paypal</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="row">
+  <div class="col-lg-3"></div>
+  <div class="col-lg-6 align-content-justify">
+    <h3 class="center">Votre inscription à l'évènement est confirmé et apparait désormais dans votre compte</h3></br>
+    <p class="center"> Souhaitez-vous régler en ligne maintenant ? </p>
+    <div class="center"><p class="center"> {{ form.render }} </p></div>
+    <a class="btn btn-primary float-right margin-top30" href="{% url 'events:index' %}">Retour à l'accueil &rarr;</a>
+  </div>
+  <div class="col-lg-3"></div>
+  </div>
+
+
 
 {% endblock %}
