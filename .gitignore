@@ -8,3 +8,5 @@ emtennis/accounts/__pycache__/
 emtennis/accounts/migrations/__pycache__/
 emtennis/accounts/tests/__pycache__/
 emtennis/payment/__pycache__/
+emtennis/media/
+emtennis/staticfiles/

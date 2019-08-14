@@ -77,6 +77,10 @@ body{
     font-size: 22px;
 }
 
+.img-profile{
+    width: 200px;
+    height: 200px;
+}
 
 /* Style for Index */
 .reduce-heading {
