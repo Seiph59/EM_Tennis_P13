@@ -30,7 +30,7 @@ def payment_done(request):
     """ Paypal return here if the payment is completed by user """
     order_id = request.session.get('order_id')
     registration = get_object_or_404(Registration, order_id=order_id)
-    registration.paid = True
+    # registration.paid = True
     registration.save()
     return render(request, 'payment/payment_done.html')
 
