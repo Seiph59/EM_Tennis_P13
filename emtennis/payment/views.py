@@ -4,6 +4,7 @@ from django.urls import reverse
 from events.models import Registration
 from paypal.standard.forms import PayPalPaymentsForm
 from django.views.decorators.csrf import csrf_exempt
+from django.utils import timezone
 
 def process_payment(request):
     """Method to allow user to pay """
@@ -31,6 +32,7 @@ def payment_done(request):
     order_id = request.session.get('order_id')
     registration = get_object_or_404(Registration, order_id=order_id)
     registration.paid = True
+    registration.payment_date_time = timezone.now()
     registration.save()
     return render(request, 'payment/payment_done.html')
 

@@ -24,6 +24,6 @@ class Registration(models.Model):
     amount = models.DecimalField(default=0, max_digits=5, decimal_places=2)
     adult_number = models.PositiveSmallIntegerField(default=0)
     child_number = models.PositiveSmallIntegerField(default=0)
-    payment_date_time = models.DateTimeField(blank=True, auto_now=True)
+    payment_date_time = models.DateTimeField(blank=True, null=True)
     paid = models.BooleanField(default=False)
     order_id = models.CharField(max_length=250, null=True)
