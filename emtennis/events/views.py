@@ -40,3 +40,11 @@ def event_detail(request, event_id):
         registration_form = RegistrationForm()
         return render(request, 'events/event_page.html', {'event': event,
                                                         'registration_form': registration_form})
+
+def legal(request):
+    """Function for legal notice page """
+    return render(request, 'events/legal_notice.html')
+
+def contact(request):
+    """Function for contact page """
+    return render(request, 'events/contact.html')

@@ -1,0 +1,40 @@
+{% extends 'events/base.html' %}
+
+{% block content %}
+{% load static %}
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{% static 'events/img/home-bg.jpg' %}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading reduce-heading">
+            <h1>Contact</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <p><h2>Nous contacter: </h2></p>
+          <div class="row box margin-top30">
+              <div class="col-md-8">
+                  <div class="post-preview">
+                        <h5 class="post-subtitle margin-top30">
+                          Par email: <a href="mailto:damien.galasso@laposte.net"><u>damien.galasso@laposte.net</u></a>
+                        </h5>
+                  </div>
+              </div>
+              <div class="col-md-4 center">
+                  <img class='image-contact'src="{% static 'events/img/letter.png' %}"/>
+              </div>
+            </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

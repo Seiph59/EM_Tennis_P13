@@ -49,10 +49,10 @@
             <a class="nav-link" href="{% url 'events:events' %}">Evènements</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Matchmaking</a>
+            <a class="nav-link" href="{% url 'accounts:matchmaking' %}">Matchmaking</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="{% url 'events:contact' %}">Contact</a>
           </li>
           {% if user.is_authenticated %}
           <li class="nav-item">
@@ -92,7 +92,7 @@
               </a>
             </li>
           </ul>
-          <p class="copyright text-muted">Copyright &copy; EM Tennis 2019</p>
+          <p class="copyright text-muted"> <a class="" href="{% url 'events:legalnotice' %}">Mentions légales</a> - Copyright &copy; EM Tennis 2019</p>
         </div>
       </div>
     </div>

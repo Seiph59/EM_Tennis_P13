@@ -1,0 +1,35 @@
+{% extends 'events/base.html' %}
+
+{% block content %}
+{% load static %}
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{% static 'events/img/home-bg.jpg' %}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading align-center center heading-mini">
+            <h2 class="center">Mentions légales EM Tennis</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+      <ul class="profile">
+          <li><b>EM Tennis </b></li>
+          <li>Propriétaire: <a href="https://www.linkedin.com/in/damien-g/"><u>Damien Galasso</u></a></li>
+          <li>Coordonnées de l'hébergeur: <a href="https://www.ovh.com/fr/"><u>OVH</u></a></li>
+          <li>Template Bootstrap par: <a href="https://startbootstrap.com/"><u>Start Bootstrap</u></a></li>
+          <li>Icone balle: <a href="https://thenounproject.com/search/?q=tennis&i=999398"><u>Noun Project</u></a></li>
+          <li>Code source: <a href="https://github.com/Seiph59/EM_Tennis_P13"><u>Github</u></a></li>
+      </ul>
+    <div class="col-4"></div>
+    </div>
+  </div>
+
+{% endblock %}

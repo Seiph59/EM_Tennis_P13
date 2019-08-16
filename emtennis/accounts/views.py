@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from accounts.forms import UserRegisterForm, ProfileForm
+from django.http import HttpResponse
 
 def create(request):
     """Root view, which will be display, when the user
@@ -27,3 +28,6 @@ def account(request):
     registrations = user.profile.registration_set.all()
     return render(request, 'accounts/my_account.html', {'registrations':registrations})
 
+def matchmaking(request):
+    """ Function to define a page under construction """
+    return HttpResponse("Fonctionnalité en cours de construction...")

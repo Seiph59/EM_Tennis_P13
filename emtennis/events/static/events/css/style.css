@@ -86,3 +86,9 @@ body{
 .reduce-heading {
     padding: 85px 0 !important;
 }
+
+/* Style for Contact */
+.image-contact {
+    width: 100px;
+    height: 100px;
+}
