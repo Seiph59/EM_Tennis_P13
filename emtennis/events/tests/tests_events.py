@@ -43,4 +43,3 @@ class RegistrationTest(TestCase):
                                         'registered': True})
         registration_accounts = Registration.objects.count()
         self.assertEqual(registration_accounts, 1)
-
