@@ -40,5 +40,11 @@ More informations on requirements.txt
 
 You can send me an Email at this address : chimere_62@hotmail.fr and tell what bug do you encounter
 
+# App has been dockerized
+* You have to define your env variables for Dockerfile
+* you need to create a .env to define variables used on docker-compose.yml
+
+Next step: CI/CD
+
 
 
