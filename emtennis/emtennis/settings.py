@@ -27,7 +27,7 @@ else:
     SECRET_KEY = '&si+vga*-0znp1&sr6f&fm%9!c!)8dnuwf=)h9rc10%6$d^%h&'
     DEBUG = True
 
-ALLOWED_HOSTS = ['51.75.141.137', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -94,10 +94,10 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'emTennis',
-            'USER': 'userP13',
-            'PASSWORD': 'P13user',
-            'HOST': 'localhost',
+            'NAME': 'emtennis',
+            'USER': 'seiph',
+            'PASSWORD': '123soleil',
+            'HOST': 'db',
             'PORT': '5432',
         }
     }

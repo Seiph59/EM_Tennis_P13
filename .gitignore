@@ -10,3 +10,8 @@ emtennis/accounts/tests/__pycache__/
 emtennis/payment/__pycache__/
 emtennis/media/
 emtennis/staticfiles/
+composeexample/
+data/
+emtennis.sh
+.env
+env/
