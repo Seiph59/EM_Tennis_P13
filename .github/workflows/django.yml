@@ -21,5 +21,4 @@ jobs:
         pip install -r requirements.txt
     - name: Migrate
       run: |
-        python emtennis/manage.py migrate
-        
+        python emtennis/manage.py test
