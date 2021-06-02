@@ -90,6 +90,17 @@ if os.environ.get('ENV') == 'PRODUCTION':
             'PORT': '5432',
         }
     }
+elif os.environ.get('GITHUB_WORKFLOW'):
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'emtennis',
+            'USER': 'seiph',
+            'PASSWORD': '123soleil',
+            'HOST': '127.0.0.1',
+            'PORT': '5432',
+        }
+    }
 else:
     DATABASES = {
         'default': {

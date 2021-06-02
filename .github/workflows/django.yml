@@ -9,16 +9,30 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_USER: {{ secrets.DB_USER }}
+          POSTGRES_PASSWORD: {{ secrets.DB_PASSWORD }}
+          POSTGRES_DB: {{ secrets.DB_NAME }}
+        ports:
+          - 5432:5432
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
       with:
         python-version: 3.6
+    - name: psycopg2 prerequisites
+      run: sudo apt-get install libpq-dev
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - name: Migrate
-      run: |
-        python emtennis/manage.py test
+    - name: Run migrations
+      run: python manage.py migrate
+    - name: test
+      run: python emtennis/manage.py test
