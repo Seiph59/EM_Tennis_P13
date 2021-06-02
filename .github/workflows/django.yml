@@ -33,6 +33,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Run migrations
-      run: python manage.py migrate
+      run: python emtennis/manage.py migrate
     - name: test
       run: python emtennis/manage.py test
