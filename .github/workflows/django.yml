@@ -11,11 +11,11 @@ jobs:
 
     services:
       postgres:
-        image: postgres
+        image: postgres:12
         env:
-          POSTGRES_USER: {{ secrets.DB_USER }}
-          POSTGRES_PASSWORD: {{ secrets.DB_PASSWORD }}
-          POSTGRES_DB: {{ secrets.DB_NAME }}
+          POSTGRES_USER: seiph
+          POSTGRES_PASSWORD: 123soleil
+          POSTGRES_DB: emtennis
         ports:
           - 5432:5432
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
